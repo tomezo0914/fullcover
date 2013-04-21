@@ -21,23 +21,22 @@
 
     imageArray = $('#fullcover div');
     imageSize = imageArray.length;
-    console.log(imageArray);
-    console.log(imageSize);
 
     if (imageSize <= 0) {
       return null;
     }
 
     for (var i = 0; i < imageSize; i++) {
-      var elem = $(imageArray[i]);
-      elem.css('position', 'absolute');
-      elem.css('top', '0');
-      elem.css('left', '0');
-      elem.css('z-index', '7');
-      elem.css('width', '100%');
-      elem.css('min-height', '100%');
-      elem.css('background-size', 'cover');
-      elem.css('visiblity', 'hidden');
+      $(imageArray[i]).css({
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        zIndex: '99',
+        width: '100%',
+        minHeight: '100%',
+        backgroundSize: 'cover',
+        visiblity: 'hidden'
+      });
     }
 
     setInterval(function() {
@@ -50,10 +49,6 @@
       }
       console.log('currentIndex: ' + currentIndex);
       console.log('nextIndex   : ' + nextIndex);
-
-      //$(imageArray[currentIndex]).fadeOut('slow', function() {
-      //  $(imageArray[nextIndex]).fadeIn('slow');
-      //});
 
       $(imageArray[currentIndex]).css({ zIndex: '99'}).stop().animate({ opacity: '0'}, 3000);
       $(imageArray[nextIndex]).css({ zIndex: '100'}).stop().animate({ opacity: '1'}, 3500);
