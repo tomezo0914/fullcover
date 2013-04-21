@@ -1,0 +1,24 @@
+.searchbox {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+}
+
+.covertitle {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000;
+  bottom: 30px;
+  left: 30px;
+  position: absolute;
+  z-index: 1000;
+}
+
+#overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 900;
+}

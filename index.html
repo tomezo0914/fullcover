@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>fullcover sample</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+    <div id="fullcover">
+      <!--
+      <img src="images/01.jpg" style="background-image: url(images/01.jpg); display: none;">
+      <img src="images/02.jpg" style="background-image: url(images/02.jpg); display: none;">
+      <img src="images/03.jpg" style="background-image: url(images/03.jpg); display: none;">
+      -->
+      <div style="background-image: url(images/01.jpg);"></div>
+      <div style="background-image: url(images/02.jpg);"></div>
+      <div style="background-image: url(images/03.jpg);"></div>
+    </div>
+    <div class="main">
+      <div class="searchbox">
+        <input type="text" />
+        <input type="button" value="search" />
+      </div>
+    </div>
+    <div class="covertitle">
+      <h1>fullcover.js</h1>
+      <p>display the full size background image</p>
+    </div>
+    <div id="overlay"></div>
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <script src="javascripts/jquery.fullcover.js"></script>
+    <script>
+      $(function() {
+        var height = $('body:first').height();
+        var width = document.documentElement.clientWidth;
+        //$('#overlay').height(height).width(width).fadeTo(500, 0.5);
+        $('.main').fullcover();
+      });
+    </script>
+  </body>
+</html>
