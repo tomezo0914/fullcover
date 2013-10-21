@@ -27,8 +27,13 @@
     }
 
     for (var i = 0; i < imageSize; i++) {
+      var _opacity = '0';
+      if (i == 0) {
+        _opacity = '1';
+      }
       $(imageArray[i]).css({
         position: 'absolute',
+        opacity: _opacity,
         top: '0',
         left: '0',
         zIndex: '99',
@@ -47,8 +52,6 @@
       } else {
         nextIndex = currentIndex + 1;
       }
-      console.log('currentIndex: ' + currentIndex);
-      console.log('nextIndex   : ' + nextIndex);
 
       $(imageArray[currentIndex]).css({ zIndex: '99'}).stop().animate({ opacity: '0'}, 3000);
       $(imageArray[nextIndex]).css({ zIndex: '100'}).stop().animate({ opacity: '1'}, 3500);
